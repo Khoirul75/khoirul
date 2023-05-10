@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>modul4</title>
+    </head>
+    <body>
+        <hr>
+        <h1 style="text-align:  center">LAZSTRORE</h1>
+        <header><hr></header>
+        <p>SELAMAT DATANG DI LAZSTORE</p>
+        <ul>
+            <li>Realme 5  :  Rp. 1.200.000</li>
+            <li>Realme 5i  :  Rp. 1.500.000</li>
+            <li>Realme c12  :  Rp. 1.800.000</li>
+            <li>Realme c15  :  Rp. 2.000.000</li>
+            <li>Realme 6  :  Rp. 2.500.000</li>
+        </ul>
+        <hr>
+        <label for="nama">Masukan Nama : </label>
+        <input type="text" id="nama" name="nama">
+
+        <form>
+            <label for="barang">Barang : </label>
+            <br>
+            <select id="barang" name="barang">
+                <option value="Realme 5">Realme 5  :  Rp. 1.200.000</option>
+                <option value="Realme 5i">Realme 5i  :  Rp. 1.500.000</option>
+                <option value="Realme c12">Realme c12  :  Rp. 1.800.000</option>
+                <option value="Realme c15">Realme c15  :  Rp. 2.000.000</option>
+                <option value="Realme 6">Realme 6  :  Rp. 2.500.000</option>
+            </select>
+            <br>
+            <label for="jumlah">Jumlah : </label>
+            <input type="number" id="jumlah" name="jumlah" min="1" max="10">
+            <button type="button" onclick="tambahBarang()">Tambahkan</button>
+
+        </form>
+        <br>
+        <hr>
+        <h2>Daftar Belanja : </h2>
+        <ul id="daftar_belanja"></ul>
+        <hr>
+        <button type="button" onclick="hitungTotal()">Hitung Total</button>
+        <hr>
+        <p>Total Harga : Rp. <span id="total_harga"0></span></p>
+        <hr>
+        <p style="background-color: aquamarine;"># Diskon 10% Untuk Member.</p>
+        <hr><hr>
+    </body>
+    <script>
+        let daftarBelanja = [];
+        function tambahBarang() {
+            let barang = document.getElementById("barang").value;
+            let jumlah = document.getElementById("jumlah").value;
+
+            daftarBelanja.push({
+                barang: barang,
+                jumlah: jumlah
+            });
+
+            let daftarBelanjaElem = document.getElementById("daftar_belanja");
+            let li = document.createElement("li");
+            li.textContent = `${jumlah} x ${barang}`;
+            daftarBelanjaElem.appendChild(li);
+        }
+
+        function hitungTotal() {
+            let totalHarga = 0;
+            for (let i=0; i< daftarBelanja.length; i++){
+                let barang = daftarBelanja[i].barang;
+                let jumlah = daftarBelanja[i].jumlah;
+                let harga = 0;
+                switch (barang) {
+                    case "Realme 5":
+                        harga = 1200000;
+                        break;
+                    case "Realme 5i":
+                        harga = 1500000;
+                        break;
+                    case "Realme c12":
+                        harga = 1800000;
+                        break;
+                    case "Realme c15":
+                        harga = 2000000;
+                        break;
+                    case "Realme 6":
+                        harga = 2500000;
+                }
+                totalHarga += harga * jumlah;
+            }
+            let member = confirm("Apakah Anda Member?");
+            if (member) {
+                let diskon =  totalHarga * 0.1; 
+                totalHarga -= diskon;
+                //diskon 10% untuk member
+            }
+            let totalHargaElem = document.getElementById("total_harga");
+            totalHargaElem.textContent = totalHarga;
+
+            let checkoutButton = document.createElement("button");
+            checkoutButton.textContent = "Checkout";
+            checkoutButton.style.display = "block";
+            checkoutButton.style.margin = "0 auto";
+            checkoutButton.addEventListener("click", function(){
+                alert(`Total harga yang harus dibayar: Rp ${totalHarga}`);
+            });
+            document.body.appendChild(checkoutButton);
+        }
+    </script>
+</html>
