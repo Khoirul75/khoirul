@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tugas</h1>
+    <p>
+        <label for="nama" >Masukan Nama : </label>
+        <input type="text" id="nama">
+        <button type="button" onclick="tambah()">Tambahkan</button>
+        <ul id="listnama"></ul>
+    </p>
+</body>
+<script>
+    let listnama =[];
+    function tambah(){
+        const namainput = document.getElementById('nama');
+        const nama = namainput.value;
+        if (nama !== '') {
+                listnama.push(nama);
+                namainput.value = '';
+                displaynama();
+            }
+    }
+    function deletenama(index) {
+            listnama.splice(index, 1);
+            displaynama();
+        }
+        function displaynama() {
+            const namalistContainer = document.getElementById('listnama');
+            namalistContainer.innerHTML = '';
+
+            for (let i = 0; i < listnama.length; i++) {
+                    const taskItem = document.createElement('li');
+                    taskItem.innerHTML = listnama[i];
+                    namalistContainer.appendChild(taskItem);
+
+                    const deleteButton = document.createElement('button');
+                    deleteButton.innerHTML = 'Hapus';
+                    deleteButton.setAttribute('onclick', `deleteTask(${i})`);
+                    taskItem.appendChild(deleteButton);
+                }
+            }
+
+</script>
+</html>

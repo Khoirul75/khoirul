@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas</title>
+</head>
+<body>
+    <h1>Program Nilai Siswa</h1>
+    <p>
+    <label for = "nama">Masukan Nama :</label>
+    <br>
+    <input type="text" id="nama">
+</p>
+<p>
+    <label for = "matkul">Mata Kuliah : </label>
+    <br>
+    <select id="matkul">
+        <option>
+            <option value="Bahasa indonesia">Bahasa Indonesia</option>
+                  <option value="Pendidikan Pancasila">Pendidikan Pancasila</option>
+                  <option value="pemrogramman">Pemrogramman Komputer</option>
+                  <option value="Kalkulus">Kalkulus</option>
+                  <option value="Matematika">Matematika</option>
+                  <option value="bahasa inggris">Bahasa Inggris</option>
+        </option>
+    </select>
+</p>
+<p>
+    <label for="nilai">Nilai :</label>
+    <br>
+    <input type="number" id="nilai">
+ </p>
+ <button type="button" onclick="lihat()">Lihat</button>
+ <div>
+ <p id="result-nama"></p>
+ <p id="result-matkul"></p>
+ <p id="result-nilai"></p>
+ <p id="result-ket"></p>
+ </div>
+</body>
+<script>
+    function lihat(){
+         var nama = document.getElementById('nama').value;
+         var matkul = document.getElementById('matkul').value;
+         var nilai = parseFloat(document.getElementById('nilai').value);
+
+         var keterangan;
+
+if (nilai >= 85) {
+    keterangan = 'Baik Sekali';
+} else if (nilai >= 79) {
+    keterangan = "Baik"
+} else if (nilai >= 74) {
+    keterangan = "Cukup"
+} else if (nilai <= 69) {
+    keterangan = "Kurang"
+} else if (nilai <= 50) {
+    keterangan = "Kurang sekali"
+} else {
+    keterangan = "Nilai tidak valid"
+}
+
+document.getElementById('result-nama').innerHTML= "Nama : "+nama;
+
+document.getElementById('result-matkul').innerHTML= "Mata Kuliah : "+matkul;
+document.getElementById('result-nilai').innerHTML= "Nilai : "+nilai;
+document.getElementById('result-ket').innerHTML= "Keterangan : "+keterangan;
+    }
+</script>
+</html>

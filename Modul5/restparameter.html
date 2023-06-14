@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rest Parameter</h1>
+</body>
+<script>
+    function get(...param) {
+    let total = 0, count = 0, index = 0;
+    for (index; index < param.length; index++) {
+        total += param[index];
+        count++
+    }
+    const average = total / count;
+    return "Rata-Rata : "+average;
+}
+
+const res = get(4, 4, 6, 4, 3, 5);
+document.write(res);
+</script>
+</html>
