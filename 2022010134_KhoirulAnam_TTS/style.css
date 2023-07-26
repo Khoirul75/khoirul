@@ -1,0 +1,250 @@
+    body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background: linear-gradient(to right,#DFD7BF, #F2EAD3, #F5F5F5);
+        
+    }
+    
+    
+    /* Style untuk navigasi */
+    header {
+        background-color: #3F2305;
+        max-width: 100%;
+        padding: 2px;
+        display: flex;
+        /* justify-content: space-between; */
+        
+    
+    }
+
+    .logo {
+        display: flex;
+        margin-left: auto;
+        max-width: 50px;
+        padding : 20px;
+        border-radius: 70px;
+    }
+
+    .logo-rpl {
+        display: flex;
+        margin-right: auto;
+        width: 60px;
+        height: 60px;
+        padding: 10px;
+      }
+    
+      .logo-polibang {
+    
+        display: flex;
+        margin-left: 80%;
+        width: 60px;
+        height: 60px;
+        padding: 10px;
+      }
+
+    /* Style untuk judul game */
+    .judul {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 20px;
+        color: #060404;
+    }
+
+    /* Style untuk deskripsi game */
+    .description {
+        max-width: 600px;
+        margin: 20px auto;
+        text-align: center;
+        font-size: 18px;
+        color: #070101;
+    }
+
+    /* Style untuk tombol masuk ke game */
+  
+    .button {
+        width: 150px;
+        height: 40px;
+        justify-content: center;
+        border-radius: 50px;
+        text-decoration: none;
+        border: 2px solid #000;
+        background-color: #3F2305;
+        color: #DFD7BF;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        /* overflow: hidden; */
+        transition: all 0.3s ease;
+      }
+      
+      .button::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        transform: translate(-50%, -50%);
+      }
+      
+      .button:hover {
+        transform: scale(1.1);
+        background-color: #DFD7BF;
+        color: #fff;
+        border-color: #fff;
+      }
+      
+      .button:hover::before {
+        color: #fff;
+      }
+
+      .button-profile {
+        display: flex;
+        margin-left: 120px;
+        padding: 10px 20px;
+        background-color: #DFD7BF;
+        color: #070303;
+        font-size: 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+      }
+      
+      .button-profile::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.2);
+        transition: left 0.3s ease;
+      }
+      
+      .button-profile:hover::before {
+        left: 0;
+      }
+      
+      .button-profile::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: #3F2305;
+        transition: width 0.3s ease;
+        transform: translate(-50%, -50%);
+      }
+      
+      .button-profile:hover::after {
+        width: 100%;
+      }
+
+    .ig{
+    margin: 0 auto;
+    max-width: 40px;
+    border-radius: 100%;
+    }
+    .wa{
+    margin: 0 auto;
+    max-width: 35px;
+    border-radius: 50%;
+    }
+    .github{
+    margin: 0 auto;
+    max-width: 40px;
+    border-radius: 100px;
+    }
+    .play{
+      display: flex;
+      justify-content: center;
+    
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        background-color: #3F2305;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+      .lvl {
+        margin-left: 33%;
+        margin-top: 30px;
+        margin-bottom: -20px;
+
+      }
+
+      table {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-top: 2%;
+    }
+    
+    td {
+        width: 40px;
+        height: 40px;
+    }
+    
+    td input {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+    
+    .block {
+        background-color: #000;
+    }
+    .col {
+        margin-left: 10%;
+        margin-top: 5%;
+        
+    }
+    .col2{
+        margin-left: 58%;
+        margin-top: -18%;
+        margin-bottom: 5%;
+    }
+    .mendatar{
+      margin-top: 50px;
+      margin-left: 30px;
+    }
+    .menurun{
+      margin-top: 20px;
+      margin-left: 30px;
+    }
+    .copyright{
+      color:#DFD7BF;
+      margin-right: 20px;
+    }
+    .pilih{
+      border-radius: 5px;
+      background-color:#F2EAD3;
+      color: #060502;
+    }
+    .user{
+      margin-left: 58%;
+      margin-bottom: -20PX;
+     
+    }
+    nav ul {
+      list-style: none;
+    
+    }
+    nav a{
+      text-decoration: none;
+      max-width: 50px;
+      font-size: 25px;
+      color: #3F2305;
+    }
+   
+
+
